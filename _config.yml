@@ -25,9 +25,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   Exploring vulnerabilities, exploit development, and cybersecurity challenges.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://noprunner.github.io" # the base hostname & protocol for your site
-twitter_username: 
+twitter_username: noprunner0
 github_username:  noprunner
-gitlab_username:
 
 # Build settings
 theme: minima

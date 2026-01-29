@@ -5,24 +5,27 @@
 
 
 
-// Our variables - Retro Terminal Theme
-$base-font-family: "Courier New", "Consolas", "Monaco", monospace;
-$base-font-size:   16px;
+// Our variables - Cyberpunk Minimal Theme
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+$base-font-family: "IBM Plex Mono", "Consolas", "Monaco", monospace;
+$base-font-size:   15px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.6;
+$base-line-height: 1.7;
 
 $spacing-unit:     30px;
 
-// Terminal-inspired color scheme
-$text-color:       #00ff41;  // Matrix green
-$background-color: #0d0d0d;  // Almost black
-$brand-color:      #00ff41;  // Bright green for links
-$accent-color:     #ff6600;  // Orange for highlights
+// Cyberpunk minimalist color scheme
+$text-color:       #e4e4e7;  // Soft white
+$background-color: #0a0a0f;  // Deep dark blue-black
+$brand-color:      #a78bfa;  // Soft purple
+$accent-color:     #818cf8;  // Indigo
+$highlight-color:  #ec4899;  // Hot pink
 
-$grey-color:       #00aa00;  // Darker green
-$grey-color-light: #003300;  // Very dark green
-$grey-color-dark:  #00ff41;  // Bright green
+$grey-color:       #71717a;  // Neutral grey
+$grey-color-light: #27272a;  // Dark grey
+$grey-color-dark:  #a1a1aa;  // Light grey
 
 // Width of the content area
 $content-width:    800px;

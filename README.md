@@ -1,119 +1,81 @@
-[![Build Status](https://gitlab.com/pages/jekyll/badges/master/pipeline.svg)](https://gitlab.com/pages/jekyll/-/pipelines?ref=master)
-![Jekyll Version](https://img.shields.io/gem/v/jekyll.svg)
+# Security Research Blog
 
----
+Retro terminal-themed Jekyll blog for security research, penetration testing, and HackTheBox write-ups.
 
-Example [Jekyll] website using GitLab Pages.  View it live at https://pages.gitlab.io/jekyll
+## Theme Features
 
-[Learn more about GitLab Pages](https://pages.gitlab.io) or read the the [official GitLab Pages documentation](https://docs.gitlab.com/ce/user/project/pages/).
+- **Retro Terminal Aesthetic**: Matrix-style green on black with monospace fonts
+- **Content-Focused**: Minimal personal info, posts take center stage
+- **Security-Oriented**: Optimized for code snippets, command examples, and technical write-ups
 
----
+## Local Development
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+```bash
+# Install dependencies
+bundle install
 
-- [Getting Started](#getting-started)
-  - [Start by forking this repository](#start-by-forking-this-repository)
-  - [Start from a local Jekyll project](#start-from-a-local-jekyll-project)
-- [GitLab CI](#gitlab-ci)
-- [Using Jekyll locally](#using-jekyll-locally)
-- [GitLab User or Group Pages](#gitlab-user-or-group-pages)
-- [Did you fork this project?](#did-you-fork-this-project)
-- [Other examples](#other-examples)
-- [Troubleshooting](#troubleshooting)
+# Run local server
+bundle exec jekyll serve
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-## Getting Started
-
-You can get started with GitLab Pages using Jekyll easily by either forking this repository or by uploading a new/existing Jekyll project.
-
-Remember you need to wait for your site to build before you will be able to see your changes.  You can track the build on the **Pipelines** tab.
-
-### Start by forking this repository
-
-1. Fork this repository.
-1. **IMPORTANT:** Remove the fork relationship.
-Go to **Settings (⚙)** > **Edit Project** and click the **"Remove fork relationship"** button.
-1. Enable Shared Runners.
-Go to **Settings (⚙)** > **Pipelines** and click the **"Enable shared Runners"** button.
-1. Rename the repository to match the name you want for your site.
-1. Edit your website through GitLab or clone the repository and push your changes.
-
-### Start from a local Jekyll project
-
-1. [Install][] Jekyll.
-1. Use `jekyll new` to create a new Jekyll Project.
-1. Add [this `.gitlab-ci.yml`](.gitlab-ci.yml) to the root of your project.
-1. Push your repository and changes to GitLab.
-
-## GitLab CI
-
-This project's static Pages are built by [GitLab CI][ci], following the steps
-defined in [`.gitlab-ci.yml`](.gitlab-ci.yml):
-
-```
-image: ruby:latest
-
-variables:
-  JEKYLL_ENV: production
-
-pages:
-  script:
-  - bundle install
-  - bundle exec jekyll build -d public
-  artifacts:
-    paths:
-    - public
-  only:
-  - master
+# Visit http://localhost:4000
 ```
 
-## Using Jekyll locally
+## GitHub Pages Deployment
 
-To work locally with this project, you'll have to follow the steps below:
+This site is configured for automatic deployment to GitHub Pages.
 
-1. Fork, clone or download this project
-1. [Install][] Jekyll
-1. Download dependencies: `bundle`
-1. Build and preview: `bundle exec jekyll serve`
-1. Add content
+### Setup Instructions:
 
-The above commands should be executed from the root directory of this project.
+1. **Create GitHub Repository**:
+   - Create a new repository named: `noprunner.github.io`
+   - Make it public (required for free GitHub Pages)
 
-Read more at Jekyll's [documentation][].
+2. **Enable GitHub Pages**:
+   - Go to repository: `Settings > Pages`
+   - Source: `GitHub Actions`
 
-## GitLab User or Group Pages
+3. **Push Your Changes**:
+   ```bash
+   git add .
+   git commit -m "Configure retro security blog theme"
+   git push origin master
+   ```
 
-To use this project as your user/group website, you will need one additional
-step: just rename your project to `namespace.gitlab.io`, where `namespace` is
-your `username` or `groupname`. This can be done by navigating to your
-project's **Settings**.
+4. **Monitor Deployment**:
+   - Go to `Actions` tab in your GitHub repository
+   - Wait for the workflow to complete
+   - Your site will be available at: `https://noprunner.github.io`
 
-Read more about [user/group Pages][userpages] and [project Pages][projpages].
+## Adding New Posts
 
-## Did you fork this project?
+Create new posts in the `_posts/` directory with the format:
 
-If you forked this project for your own use, please go to your project's
-**Settings** and remove the forking relationship, which won't be necessary
-unless you want to contribute back to the upstream project.
+```
+YYYY-MM-DD-post-title.markdown
+```
 
-## Other examples
+Example frontmatter:
+```yaml
+---
+layout: post
+title:  "HTB: Machine Name Walkthrough"
+date:   2026-01-29 12:00:00 +0300
+categories: htb pentesting
+---
+```
 
-* [jekyll-branched](https://gitlab.com/pages/jekyll-branched) demonstrates how you can keep your GitLab Pages site in one branch and your project's source code in another.
-* The [jekyll-themes](https://gitlab.com/jekyll-themes) group contains a collection of example projects you can fork (like this one) having different visual styles.
+## Customization
 
-## Troubleshooting
+- **Colors**: Edit `/css/main.scss` variables
+- **Layouts**: Modify files in `_layouts/`
+- **Styles**: Update SCSS files in `_sass/`
+- **Config**: Edit `_config.yml` for site-wide settings
 
-1. CSS is missing! That means two things:
-    * Either that you have wrongly set up the CSS URL in your templates, or
-    * your static generator has a configuration option (`_config.yml`) that needs to be explicitly
-    set in order to serve static assets under a relative URL.
+## Tips
 
-[ci]: https://about.gitlab.com/gitlab-ci/
-[Jekyll]: http://jekyllrb.com/
-[install]: https://jekyllrb.com/docs/installation/
-[documentation]: https://jekyllrb.com/docs/home/
-[userpages]: https://docs.gitlab.com/ce/user/project/pages/introduction.html#user-or-group-pages
-[projpages]: https://docs.gitlab.com/ce/user/project/pages/introduction.html#project-pages
+- Use code blocks extensively - they're styled for terminal/hacking aesthetic
+- H2 and H3 headings automatically get `##` and `###` prefixes
+- Links glow on hover for that cyberpunk feel
+- Post listings have `[+]` prefixes and hover effects
+
+Happy hacking! 🔐

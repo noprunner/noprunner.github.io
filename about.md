@@ -4,12 +4,13 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Security researcher and penetration tester.
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jekyll" %} /
-[minima](https://github.com/jekyll/minima)
+This blog contains write-ups, research notes, and technical documentation on:
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+- HackTheBox challenges
+- Vulnerability research
+- Exploit development
+- Security tools and techniques
+
+All content is for educational purposes only.
